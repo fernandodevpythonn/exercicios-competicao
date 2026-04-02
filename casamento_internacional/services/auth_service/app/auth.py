@@ -5,12 +5,13 @@ from .database import get_connection
 from .validators import validate_email, validate_password
 import os
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY", "senac-secret")
 
 def gerar_token(user):
   payload = {
     "id": user["idusuario"],
-    "exp": datetime.datetime.now(datetime.timezone.utf)+datetime.timedelta(hours=2)
+    "perfil": user["perfil"],
+    "exp": datetime.datetime.now(datetime.timezone.utc)+datetime.timedelta(hours=2)
   }
   token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
   return token
@@ -21,7 +22,7 @@ def login_user(data):
 
   valid, msg = validate_email(email)
   if not valid:
-    return jsonify({"error": msg}),400
+    return jsonify({"error": msg}),400,
   
   valid, msg = validate_password(senha)
   if not valid:

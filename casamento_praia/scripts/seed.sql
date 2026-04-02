@@ -2,376 +2,184 @@
 
 
   INSERT INTO usuario (idusuario,nome,email,senha,perfil)
-  VALUES
-  (
-       '1',
-       'Raquel Aparecida',
-       'da-motaemanuelly@example.com',
-       '$2b$12$jsrPb/qMkZQ.ZYIydDwi9.KH8dqeEnMtN4ulDBvi6Vss4SA4lwPgy',
-       'cerimonialista'                     
-       ),
-(
-       '2',
-       'Luna Rezende',
-       'cavalcantiana@example.org',
-       '$2b$12$IwEI8x3EIdDEis6..LbJAuplmR4HHSowx6kBm9cCqgMx/G/woB9uC',
-       'cerimonialista'                     
-       ),
-(
-       '3',
-       'Vitória das Neves',
-       'araujovinicius@example.com',
-       '$2b$12$ojuSsSAIH.eIZ4UKrg75jeLFCPmYnu8m/AQ2Av95IQgcIWJ3w.phK',
-       'cerimonialista'                     
-       ),
-(
-       '4',
-       'Dr. Yan Peixoto',
-       'enzofogaca@example.com',
-       '$2b$12$7C6/pgXQI54wNI8Xb3YFXOqFZyXl1/TSbx0p9JlqieIpvYZ12WFyC',
-       'administrador'                     
-       ),
-(
-       '5',
-       'Enrico Caldeira',
-       'rafaela89@example.com',
-       '$2b$12$gQ.m2.30HePnBN7PLl9q8eJMAanQQ7vJecSyDOu7Qf/cQ2Cf/O8wK',
-       'administrador'                     
-       ),
-(
-       '6',
-       'Gabriel Nascimento',
-       'juliaalmeida@example.org',
-       '$2b$12$EoLnmE9ilyEYH.Kz.72aQuFPnwLaWj9uqIpTAN6ZLuNEcaSLBsTe.',
-       'administrador'                     
-       ),
-(
-       '7',
-       'Melina Melo',
-       'da-motadavi-lucas@example.net',
-       '$2b$12$3LIpnqVAlP14GT4MGqNTaez6pF53nzvueO/hmRRPFnSs9Bc1uA17C',
-       'administrador'                     
-       ),
-(
-       '8',
-       'Melissa Mendonça',
-       'maria-helenacampos@example.com',
-       '$2b$12$DXoasJLYrxRGiPjaeK3u/e9Y4K1r3niBR5jI9ityutEfZNQV5uIoe',
-       'administrador'                     
-       ),
-(
-       '9',
-       'Mariane Sales',
-       'gmontenegro@example.com',
-       '$2b$12$XORKjVlDwHhRqMT9kP4EKeeMPLaPrEi1h7OyJvSGD6j2himKOEWMi',
-       'cerimonialista'                     
-       ),
-(
-       '10',
-       'Ana Liz Lopes',
-       'melina59@example.com',
-       '$2b$12$D.wcAXWkqxjMKapnJjzLMeD0nSu2MApyUz8A5rgSlbGZ3sjIzvEUO',
-       'administrador'                     
-       ),
-(
-       '11',
-       'Laura Freitas',
-       'da-cunhafelipe@example.org',
-       '$2b$12$FjZimb03eLSM0PF5nl.2b.QabvjqXN7WZa0hiTbpDuXANxkONu6/C',
-       'cerimonialista'                     
-       ),
-(
-       '12',
-       'Maria Fernanda Araújo',
-       'pcirino@example.org',
-       '$2b$12$LWlBuQ8Jgk6Q.ChclgJahOpV32bvbp625lKZ0t6EGqOm65iL3dN6u',
-       'cerimonialista'                     
-       );
-
-    INSERT INTO convidado (idconvidado,nome,email,cpf)
-    VALUES
-    (
-        '1',
-        'Lorena Ramos',
-        'leticiadias@example.net',
-        '63279085438'
-        ),
-(
-        '2',
-        'Dr. João Miguel Teixeira',
-        'albuquerquelarissa@example.org',
-        '31057829404'
-        ),
-(
-        '3',
-        'Melissa Silva',
-        'fda-mota@example.org',
-        '74160529399'
-        ),
-(
-        '4',
-        'Isadora Peixoto',
-        'raelalmeida@example.com',
-        '67351802408'
-        ),
-(
-        '5',
-        'Stephany Cavalcanti',
-        'arthur-gabrielsales@example.com',
-        '24861370507'
-        ),
-(
-        '6',
-        'Gael Henrique Lopes',
-        'marcelo11@example.net',
-        '76908431231'
-        ),
-(
-        '7',
-        'Gabrielly Aparecida',
-        'anasampaio@example.org',
-        '05649712867'
-        ),
-(
-        '8',
-        'Maya Martins',
-        'maria-alice52@example.org',
-        '30586471901'
-        ),
-(
-        '9',
-        'Kamilly Porto',
-        'lorenzo79@example.com',
-        '02875614967'
-        ),
-(
-        '10',
-        'Bento Andrade',
-        'olivia14@example.net',
-        '28796150386'
-        ),
-(
-        '11',
-        'Ana Liz Almeida',
-        'vcastro@example.com',
-        '57912038612'
-        ),
-(
-        '12',
-        'Luna Vieira',
-        'sviana@example.org',
-        '83714920650'
-        );
-
+  VALUES (1, 'maria','adminmaria@gmail.com', '$2b$12$BpQaW/K2186gUBcqdtZOOeFByGVaKEM2mw8k0RHrjMQaoe8kB0w7O','administrador'),
+  (2, 'joao','cerimonialjoao@gmail.com', '$2b$12$ln0PrwGokM5yxy4mGTEz2exmThFktEOytvS7/p.rmcLALhwx4/cNG','cerimonialista');
+  
     INSERT INTO evento (idevento,nome,cidade,bairro,rua,numero,data_time)
+    VALUES (1,'casamento na praia','porto alegre','agronomia','marcioholver', 102, '20/03/2026 20:30:00');
+    
+    INSERT INTO convidado (idconvidado,nome,email,cpf,evento_idevento)
     VALUES
     (
-        '1',
-        'Luara Sales',
-        'Melo Paulista',
-        'Vila Ipiranga',
-        'Travessa Luiz Otávio Borges',
-        '964',
-        '2018-08-27 14:40:45'
+        1,
+        'Lívia Vieira',
+        'isabelrios@example.org',
+        95681043215,
+        1
         ),
 (
-        '2',
-        'Manuella Sampaio',
-        'da Cruz da Serra',
-        'Ventosa',
-        'Viela de Fernandes, 916',
-        '13',
-        '2018-08-27 14:40:45'
+        2,
+        'Rodrigo Silveira',
+        'eloahpinto@example.org',
+        58176204994,
+        1
         ),
 (
-        '3',
-        'Heitor Mendes',
-        'Pereira',
-        'Marieta 3ª Seção',
-        'Sítio Thomas Pereira, 33',
-        '434717',
-        '2018-08-27 14:40:45'
+        3,
+        'Théo Duarte',
+        'eloa54@example.com',
+        92461075352,
+        1
         ),
 (
-        '4',
-        'Miguel Silva',
-        'Carvalho',
-        'Taquaril',
-        'Área Leonardo Guerra, 20',
-        '7803926',
-        '2018-08-27 14:40:45'
+        4,
+        'Gustavo Henrique Mendonça',
+        'beatrizvargas@example.org',
+        64327985074,
+        1
         ),
 (
-        '5',
-        'Heloisa Marques',
-        'Ferreira',
-        'Independência',
-        'Passarela de da Paz, 6',
-        '28300',
-        '2018-08-27 14:40:45'
+        5,
+        'Sr. Luan Fogaça',
+        'mcasa-grande@example.net',
+        62157089330,
+        1
         ),
 (
-        '6',
-        'Yasmin Siqueira',
-        'Vieira',
-        'Flavio Marques Lisboa',
-        'Distrito Noah Silva, 70',
-        '713807',
-        '2018-08-27 14:40:45'
+        6,
+        'Isabelly Cavalcante',
+        'joao-vitorcamargo@example.org',
+        73408921504,
+        1
         ),
 (
-        '7',
-        'Luana Castro',
-        'Sousa',
-        'Satelite',
-        'Avenida Maria Isis Oliveira, 764',
-        '82',
-        '2018-08-27 14:40:45'
+        7,
+        'Srta. Emanuelly Pacheco',
+        'dda-costa@example.net',
+        84602531717,
+        1
         ),
 (
-        '8',
-        'Dr. Luiz Felipe Rezende',
-        'Sampaio de da Rosa',
-        'Aparecida 7ª Seção',
-        'Pátio Enzo Ribeiro, 96',
-        '4134',
-        '2018-08-27 14:40:45'
+        8,
+        'Dr. Valentim Fogaça',
+        'stephany79@example.net',
+        73508492656,
+        1
         ),
 (
-        '9',
-        'Giovanna Viana',
-        'Araújo',
-        'Inconfidência',
-        'Lago de da Rosa, 100',
-        '39',
-        '2018-08-27 14:40:45'
-        ),
-(
-        '10',
-        'Nicole Santos',
-        'Nascimento de da Rocha',
-        'Mariquinhas',
-        'Vale Maria Vitória Casa Grande, 25',
-        '732732541',
-        '2018-08-27 14:40:45'
-        ),
-(
-        '11',
-        'Sra. Ana Júlia Monteiro',
-        'Nunes',
-        'Conjunto Paulo Vi',
-        'Núcleo Noah Porto',
-        '1',
-        '2018-08-27 14:40:45'
-        ),
-(
-        '12',
-        'Luana Andrade',
-        'Vasconcelos',
-        'Vila Pinho',
-        'Parque Esther da Luz, 857',
-        '3599016',
-        '2018-08-27 14:40:45'
+        9,
+        'Sr. Rhavi Lopes',
+        'monteiromaya@example.net',
+        73125489032,
+        1
         );
 
-    INSERT INTO area (idarea,area)
+    INSERT INTO area (idarea,evento_idevento,area)
+    VALUES (1,1,'cerimonia'),
+    (2,1,'buffet'),
+    (3,1,'area de danca');
+    
+    INSERT INTO checkin (idcheckin,convidado_idconvidado, usuario_idusuario, status)
     VALUES
     (
-        '1',
-        'casamento'                
+        1,
+        1,                 
+        1,
+        'confirmado'
         ),
 (
-        '2',
-        'pista de dança'                
+        2,
+        2,                 
+        1,
+        'confirmado'
         ),
 (
-        '3',
-        'buffet'                
+        3,
+        3,                 
+        2,
+        'confirmado'
         ),
 (
-        '4',
-        'buffet'                
+        4,
+        4,                 
+        2,
+        'confirmado'
         ),
 (
-        '5',
-        'buffet'                
+        5,
+        5,                 
+        2,
+        'confirmado'
         ),
 (
-        '6',
-        'pista de dança'                
+        6,
+        6,                 
+        2,
+        'confirmado'
         ),
 (
-        '7',
-        'buffet'                
+        7,
+        7,                 
+        1,
+        'confirmado'
         ),
 (
-        '8',
-        'casamento'                
+        8,
+        8,                 
+        1,
+        'confirmado'
         ),
 (
-        '9',
-        'buffet'                
-        ),
-(
-        '10',
-        'casamento'                
-        ),
-(
-        '11',
-        'buffet'                
-        ),
-(
-        '12',
-        'buffet'                
+        9,
+        9,                 
+        1,
+        'confirmado'
         );
 
-    INSERT INTO checkin (idcheckin,qrcode)
-    VALUES
-    (
-        '1',
-        '514'                     
+INSERT INTO log (idlog,usuario_idusuario,datetime)
+VALUES
+(
+        1,
+        2,
+        '2015-03-09 23:13:23'                 
         ),
 (
-        '2',
-        '086'                     
+        2,
+        2,
+        '1980-04-29 01:30:48'                 
         ),
 (
-        '3',
-        '347'                     
+        3,
+        1,
+        '2016-10-25 08:03:28'                 
         ),
 (
-        '4',
-        '619'                     
+        4,
+        2,
+        '1983-01-05 07:02:19'                 
         ),
 (
-        '5',
-        '926'                     
+        5,
+        2,
+        '1974-04-12 04:06:40'                 
         ),
 (
-        '6',
-        '197'                     
+        6,
+        1,
+        '2005-01-11 23:48:35'                 
         ),
 (
-        '7',
-        '137'                     
+        7,
+        2,
+        '2004-06-24 09:00:47'                 
         ),
 (
-        '8',
-        '697'                     
+        8,
+        2,
+        '1996-07-28 11:31:03'                 
         ),
 (
-        '9',
-        '804'                     
-        ),
-(
-        '10',
-        '364'                     
-        ),
-(
-        '11',
-        '088'                     
-        ),
-(
-        '12',
-        '412'                     
+        9,
+        2,
+        '1981-09-16 07:11:26'                 
         );
