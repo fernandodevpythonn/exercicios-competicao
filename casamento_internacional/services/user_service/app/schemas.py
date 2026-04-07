@@ -14,6 +14,7 @@ class UserUpdate(BaseModel):
   nome: Optional[str]
   cpf: Optional[str]
   email: Optional[EmailStr]
+  senha: Optional[str]
   id_perfil: Optional[int]
 
 class UserOut(UserBase):

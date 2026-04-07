@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__)
 app.register_blueprint(main)
 
-app.config['SECRET_KEY'] = os.getenv("SECRET_KEY","supersegredo123")
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 
 CORS(app, resources={r"/*": {"origins": "*"}})
 

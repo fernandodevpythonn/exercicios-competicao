@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", "supersegredo123")
 def token_required(f):
     @wraps(f)
     def decorated(*args,**kwargs):
-        auth_header = request.headers.get("authorization")
+        auth_header = request.headers.get("Authorization")
         if not auth_header:
             return jsonify({"error": "token ausente"}), 401
         try:

@@ -4,32 +4,38 @@ from .auth import token_required
 
 main = Blueprint("main", __name__)
 
-@main.route("/users", methods = ["GET"])
+@main.route("/users", methods=["GET"])
 @token_required
 def route_list_users():
     users = list_users()
     return jsonify(users),200
 
-@main.route("/users/<int:user_id", methods = ["GET"])
+@main.route("/users/<int:userid>", methods=["GET"])
 @token_required
-def route_get_user(user_id):
-    user = get_user(user_id)
+def route_get_user(userid):
+    user = get_user(userid)
     if user:
         return jsonify(user), 200
-    return jsonify({"error": "usuário criado", "id": user_id}),201
+    return jsonify({"error": "usuário não encontrado"}), 404
 
 @main.route("/users", methods=["POST"])
 @token_required
 def route_create_user():
     data = request.get_json()
-    user_id,msg = create_user(data)
-    if not user_id:
+    userid,msg = create_user(data)
+    if not userid:
         return jsonify({"error":msg}), 400
-    return jsonify({"message":"usuário criado","id":user_id}), 201
+    return jsonify({"message":"usuário criado","id":userid}), 201
 
-@main.route("/users/<int:user_id", methods=["PUT"])
+@main.route("/users/<int:userid>", methods=["PUT"])
 @token_required
-def route_update_user(user_id):
+def route_update_user(userid):
     data = request.get_json()
-    update_user(user_id, data)
+    update_user(userid, data)
     return jsonify({"message": "usuario atualizado"}), 200
+
+@main.route("/users/<int:userid>", methods = ["DELETE"])
+@token_required
+def route_delete_user(userid):
+    delete_user(userid)
+    return jsonify({"message": "usuário removido"}), 200

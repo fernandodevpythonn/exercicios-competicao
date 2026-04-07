@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, request
 import jwt, datetime, bcrypt
 from functools import wraps
 from .database import get_connection
@@ -49,7 +49,7 @@ def token_required(f):
   @wraps(f)
   def decorated(*args, **kwargs):
     from flask import request
-    token = request.headers.get("authorization")
+    token = request.headers.get("Authorization")
 
     if not token:
       return jsonify({"error": "token ausente"}), 401
