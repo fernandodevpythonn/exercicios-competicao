@@ -1,9 +1,9 @@
 -- seed casamento praia 
 
 
-  INSERT INTO usuario (idusuario,nome,email,senha,perfil)
-  VALUES (1, 'maria','adminmaria@gmail.com', '$2b$12$BpQaW/K2186gUBcqdtZOOeFByGVaKEM2mw8k0RHrjMQaoe8kB0w7O','administrador'),
-  (2, 'joao','cerimonialjoao@gmail.com', '$2b$12$ln0PrwGokM5yxy4mGTEz2exmThFktEOytvS7/p.rmcLALhwx4/cNG','cerimonialista');
+  INSERT INTO usuario (idusuario,nome,email,senha,perfil)VALUES
+  (1, 'maria','adminmaria@gmail.com', '$2b$12$Vv9mnBqBL1wnEC1eFxv2TugT9/6g21ISUfPrd6oC7LyG1hik/qobu','administrador'),
+  (2, 'joao','cerimonialjoao@gmail.com', '$2b$12$3MNiMRqQg.4CkBT.Rc4qAeiQlvLUtyyM5izl0B1RWz5ySMWgCW/ZW','cerimonialista');
   
     INSERT INTO evento (idevento,nome,cidade,bairro,rua,numero,data_time)
     VALUES (1,'casamento na praia','porto alegre','agronomia','marcioholver', 102, '20/03/2026 20:30:00');
@@ -12,65 +12,65 @@
     VALUES
     (
         1,
-        'Lívia Vieira',
-        'isabelrios@example.org',
-        95681043215,
+        'Kevin Vieira',
+        'laraalves@example.com',
+        83926174528,
         1
         ),
 (
         2,
-        'Rodrigo Silveira',
-        'eloahpinto@example.org',
-        58176204994,
+        'Maria Alice Borges',
+        'saraoliveira@example.net',
+        86971054202,
         1
         ),
 (
         3,
-        'Théo Duarte',
-        'eloa54@example.com',
-        92461075352,
+        'Arthur Gabriel das Neves',
+        'maria-isismonteiro@example.net',
+        89671402585,
         1
         ),
 (
         4,
-        'Gustavo Henrique Mendonça',
-        'beatrizvargas@example.org',
-        64327985074,
+        'João Gabriel Freitas',
+        'guerramaria-luiza@example.net',
+        59862301406,
         1
         ),
 (
         5,
-        'Sr. Luan Fogaça',
-        'mcasa-grande@example.net',
-        62157089330,
+        'Isabel da Luz',
+        'vianajose-pedro@example.org',
+        39056487256,
         1
         ),
 (
         6,
-        'Isabelly Cavalcante',
-        'joao-vitorcamargo@example.org',
-        73408921504,
+        'Maria Helena Gomes',
+        'fernanda86@example.org',
+        28309641796,
         1
         ),
 (
         7,
-        'Srta. Emanuelly Pacheco',
-        'dda-costa@example.net',
-        84602531717,
+        'Diogo Cassiano',
+        'anascimento@example.net',
+        35627804947,
         1
         ),
 (
         8,
-        'Dr. Valentim Fogaça',
-        'stephany79@example.net',
-        73508492656,
+        'Gael Fonseca',
+        'fonsecaagatha@example.net',
+        35428760974,
         1
         ),
 (
         9,
-        'Sr. Rhavi Lopes',
-        'monteiromaya@example.net',
-        73125489032,
+        'Dra. Luana Cavalcanti',
+        'bpinto@example.com',
+        86253719068,
         1
         );
 
@@ -108,19 +108,19 @@
 (
         5,
         5,                 
-        2,
+        1,
         'confirmado'
         ),
 (
         6,
         6,                 
-        2,
+        1,
         'confirmado'
         ),
 (
         7,
         7,                 
-        1,
+        2,
         'confirmado'
         ),
 (
@@ -132,7 +132,7 @@
 (
         9,
         9,                 
-        1,
+        2,
         'confirmado'
         );
 
@@ -140,46 +140,46 @@ INSERT INTO log (idlog,usuario_idusuario,datetime)
 VALUES
 (
         1,
-        2,
-        '2015-03-09 23:13:23'                 
+        1,
+        '2010-12-10 02:55:43'                 
         ),
 (
         2,
-        2,
-        '1980-04-29 01:30:48'                 
+        1,
+        '1970-07-04 17:54:08'                 
         ),
 (
         3,
-        1,
-        '2016-10-25 08:03:28'                 
+        2,
+        '1981-02-20 21:34:54'                 
         ),
 (
         4,
         2,
-        '1983-01-05 07:02:19'                 
+        '2007-03-11 16:40:09'                 
         ),
 (
         5,
         2,
-        '1974-04-12 04:06:40'                 
+        '1984-07-03 16:29:34'                 
         ),
 (
         6,
         1,
-        '2005-01-11 23:48:35'                 
+        '1989-11-19 19:31:50'                 
         ),
 (
         7,
         2,
-        '2004-06-24 09:00:47'                 
+        '1993-07-07 21:33:44'                 
         ),
 (
         8,
         2,
-        '1996-07-28 11:31:03'                 
+        '1978-07-08 04:37:44'                 
         ),
 (
         9,
-        2,
-        '1981-09-16 07:11:26'                 
+        1,
+        '1972-08-16 20:42:07'                 
         );
