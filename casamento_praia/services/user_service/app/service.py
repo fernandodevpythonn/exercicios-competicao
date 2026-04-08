@@ -14,4 +14,9 @@ def list_users():
 def get_user(userid):
     conn = get_connection()
     cursor = conn.cursor(dictionary=True)
-    
+    cursor.execute("SELECT idusuario, nome, cpf, email, perfil FROM usuario WHERE idusuario=%s", (userid,))
+    user = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    return user
+
