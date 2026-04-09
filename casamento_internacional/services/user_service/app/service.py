@@ -5,7 +5,7 @@ from mysql.connector import IntegrityError
 def list_users():
   conn = get_connection()
   cursor = conn.cursor(dictionary=True)
-  cursor.execute("SELECT idusuario, nome, cpf, email, perfil FROM usuario")
+  cursor.execute("SELECT idusuario, nome, email, cpf, perfil FROM usuario")
   users = cursor.fetchall()
   cursor.close()
   conn.close()
@@ -14,7 +14,7 @@ def list_users():
 def get_user(userid):
   conn = get_connection()
   cursor = conn.cursor(dictionary=True)
-  cursor.execute("SELECT idusuario, nome, cpf, email, perfil FROM usuario WHERE idusuario=%s", (userid,))
+  cursor.execute("SELECT idusuario, nome, email, cpf, perfil FROM usuario WHERE idusuario=%s", (userid,))
   user = cursor.fetchone()
   cursor.close()
   conn.close()

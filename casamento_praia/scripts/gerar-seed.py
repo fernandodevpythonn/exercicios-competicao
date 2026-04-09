@@ -14,7 +14,6 @@ def gerar_hash(senha: str):
 def gerar_sql(tamanho_seed: int):
       sql = "-- seed casamento praia \n\n"
 
-
       sql += f"""
   INSERT INTO usuario (idusuario,nome,email,senha,perfil)VALUES
   (1, 'maria','adminmaria@gmail.com', '{gerar_hash('060606')}','administrador'),
