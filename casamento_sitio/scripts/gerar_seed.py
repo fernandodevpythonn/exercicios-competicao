@@ -14,115 +14,82 @@ def gerar_sql(tamanho_seed: int):
 
     sql = "-- seed casamento sitio \n"
 
+    sql += f"""
+    INSERT INTO evento (idevento,nome,data_hora,cidade,bairro,rua,numero,cep)
+    VALUES (1, 'casamento_sitio', '20/03/2026 20:30:00', 'porto alegre', 'joao pessoa', 'sao martins', 112, 10203948);
+    """
+    
+    sql += f"""
+    INSERT INTO usuario (idusuario,nome,email,senha,evento_idevento,perfil)
+    VALUES (1,'Vitor', 'vitoradm@gmail.com', '{gerar_hash('92530011')}',1, 'administrador'),
+    (2,'Ana', 'anacerimonia@gmail.com', '{gerar_hash('10520011')}',1, 'cerimonialista');
+    """
 
     linha_convidado =[]
     for i in range(1,tamanho_seed):
         id = i
         nome = fake.name_nonbinary()
-        cpf = fake.cpf()
+        cpf = limpar_cpf(fake.cpf())
         email = fake.email()
         linha_convidado.append(f"""(
-        '{id}',
+        {id},
         '{nome}',
-        '{cpf}',
+        {cpf},
+        1,
         '{email}'                       
         )""")
 
     sql += f"""
-    INSERT INTO convidado (idconvidado,nome,cpf,email)
+    INSERT INTO convidado (idconvidado,nome,cpf,evento_idevento,email)
     VALUES
     """+",\n".join(linha_convidado)+";\n"
     
     linha_checkin = []
     for i in range(1,tamanho_seed):
         id = i
+        id_usuario = random.choice([1,2])
         status = "confirmado"
         linha_checkin.append(f"""(
-        '{id}',
+        {id},
+        {i},
+        {id_usuario},
         '{status}'                     
         )""")
 
     sql += f"""
-    INSERT INTO checkin (idcheckin,status)
+    INSERT INTO checkin (idcheckin,convidado_idconvidado,usuario_idusuario,status)
     VALUES
     """+",\n".join(linha_checkin)+";\n"
 
-    linha_espaco = []
-    for i in range(1,tamanho_seed):
-        id = i
-        espaco = random.choice(['area de danca','buffet','casamento'])
-        linha_espaco.append(f"""(
-        '{id}',
-        '{espaco}'                    
-        )""")
+    
     sql += f"""
-    INSERT INTO espaco (idespaco,espaco)
-    VALUES
-    """+",\n".join(linha_espaco)+";\n"
+    INSERT INTO espaco (idespaco,espaco,evento_idevento)
+    VALUES (1,'cerimonia',1),(2, 'espaço de dança',1), (3, 'buffet',1);
+    """
 
-    linha_evento = []
-    for i in range(1,tamanho_seed):
-        id = i
-        nome = "casamento Sitio"
-        date_time = fake.date_time()
-        cidade = fake.city()
-        bairro = fake.bairro()
-        rua = fake.street_name()
-        numero = fake.building_number()
-        cep = fake.postcode()
-        linha_evento.append(f"""(
-        '{id}',
-        '{nome}',
-        '{date_time}',
-        '{cidade}',
-        '{bairro}',
-        '{rua}',
-        '{numero}',
-        '{cep}'                    
-        )""")
-    sql += f"""
-    INSERT INTO evento (idevento,nome,date_time,cidade,bairro,rua,numero,cep)
-    VALUES
-    """+",\n".join(linha_evento)+";\n"
+    # linha_log = []
+    # for i in range(1,tamanho_seed):
+    #     id = i
+    #     date_time = fake.date_time()
+    #     idusuario = random.choice([1,2])
 
-    linha_log = []
-    for i in range(1,tamanho_seed):
-        id = i
-        date_time = fake.date_time()
-        linha_log.append(f"""(
-        '{id}',
-        '{date_time}'                 
-        )""")
-    sql += f"""
-    INSERT INTO log (idlog,date_time)
-    VALUES
-    """+",\n".join(linha_log)+";\n"
+    #     linha_log.append(f"""(
+    #     {id},
+    #     '{date_time}',                 
+    #     {idusuario}
+    #     )""")
 
-    linha_usuario = []
-    for i in range(1,tamanho_seed):
-        id = i
-        nome = fake.name_nonbinary()
-        email = fake.email()
-        senha = gerar_hash(fake.password(length=10))
-        perfil = random.choice(['cerimonialista','administrador'])
-        linha_usuario.append(f"""(
-        '{id}',
-        '{nome}',
-        '{email}',
-        '{senha}',
-        '{perfil}'                     
-        )""")
-    sql += f"""
-    INSERT INTO usuario (idusuario,nome,email,senha,perfil)
-    VALUES
-    """+",\n".join(linha_usuario)+";\n"
+    # # sql += f"""
+    # # INSERT INTO log (idlogin_log,date_time,usuario_idusuario)
+    # # VALUES
+    # # """+",\n".join(linha_log)+";\n"
 
     return sql
 
 if __name__ == "__main__":
     while True:
         try:
-            qtd = int(input("Quantas linhas deseja inserir? "))
+            qtd = int(input("Quantas convidados deseja inserir? "))
             if qtd >= 10:
                 break
             else:
