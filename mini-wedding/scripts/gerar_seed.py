@@ -16,12 +16,12 @@ def gerar_sql(tamanho_seed: int):
     sql += f"""
   INSERT INTO usuario (idusuario,nome,email,senha,perfil)
   VALUES (1, 'mario', 'marioadm@gmail.com','{gerar_hash('54458799')}','administrador'),
-  (2, 'juliana','julianausu@gmail.com','{gerar_hash('36645700')}', 'usuario')
+  (2, 'juliana','julianausu@gmail.com','{gerar_hash('36645700')}', 'usuario');
   """
     
     sql += f"""
   INSERT INTO evento (idevento,nome,date_time,cidade,bairro,rua,numero,cep)
-  VALUES (1, 'mini wedding', '{fake.date_time()}','porto alegre', 'farrapos', 'limario', 455, 06958476)
+  VALUES (1, 'mini wedding', '{fake.date_time()}','porto alegre', 'farrapos', 'limario', 455, 06958476);
   """
     
     linha_convidado = []
@@ -36,6 +36,7 @@ def gerar_sql(tamanho_seed: int):
       '{nome}',
       '{email}',
       '{cpf}',
+      1,
       '{restricao_alimentar}'                      
       )""")
     sql += f"""
@@ -46,10 +47,14 @@ def gerar_sql(tamanho_seed: int):
     linha_checkin = []
     for i in range(tamanho_seed):
       id = i
-      status = "confirmado"
+      status = 'confirmado'
+      convidado_idconvidado = i
+      idusuario = random.choice([1,2])
       linha_checkin.append(f"""(
       {id},
-      '{status}'                     
+      {convidado_idconvidado},
+      {idusuario},
+      '{status}'                    
       )""")
     sql += f"""
   INSERT INTO checkin (idcheckin,convidado_idconvidado, usuario_idusuario,status)

@@ -21,7 +21,7 @@ def gerar_sql(tamanho_seed: int):
     
     sql += f"""
     INSERT INTO usuario (idusuario,nome,email,senha,evento_idevento,perfil)
-    VALUES (1,'Vitor', 'vitoradm@gmail.com', '{gerar_hash('92530011')}',1, 'administrador'),
+    VALUES (1,'Vitor', 'vitoradm@gmail.com', '{gerar_hash('Fer@1234656')}',1, 'administrador'),
     (2,'Ana', 'anacerimonia@gmail.com', '{gerar_hash('10520011')}',1, 'cerimonialista');
     """
 

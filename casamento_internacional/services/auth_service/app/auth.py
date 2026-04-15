@@ -1,4 +1,4 @@
-from flask import jsonify, request
+from flask import jsonify
 import jwt, datetime, bcrypt
 from functools import wraps
 from .database import get_connection
@@ -22,7 +22,7 @@ def login_user(data):
 
   valid, msg = validate_email(email)
   if not valid:
-    return jsonify({"error": msg}),400,
+    return jsonify({"error": msg}),400
   
   valid, msg = validate_password(senha)
   if not valid:
@@ -39,9 +39,9 @@ def login_user(data):
     return jsonify({"error": "usuário não encontrado"}), 404
   
   if bcrypt.checkpw(senha.encode(), user["senha"].encode()):
-    token = gerar_token(user)
-    del user["senha"]
-    return jsonify({"token": token, "user": user})
+     token = gerar_token(user)
+     del user["senha"]
+     return jsonify({"token": token, "user": user})
 
   return jsonify({"error": "senha inválida"}), 401
 
@@ -55,7 +55,6 @@ def token_required(f):
       return jsonify({"error": "token ausente"}), 401
     
     try:
-      
       token = token.split(" ")[1]
       jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
     except Exception as e:

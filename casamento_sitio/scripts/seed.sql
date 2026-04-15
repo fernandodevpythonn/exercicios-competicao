@@ -4,73 +4,73 @@
     VALUES (1, 'casamento_sitio', '20/03/2026 20:30:00', 'porto alegre', 'joao pessoa', 'sao martins', 112, 10203948);
     
     INSERT INTO usuario (idusuario,nome,email,senha,evento_idevento,perfil)
-    VALUES (1,'Vitor', 'vitoradm@gmail.com', '$2b$12$R0rVA320.jzpw8U3JWHzzOfKlAcuL5JMtL645kiHqvy9ZntXRl5.O',1, 'administrador'),
-    (2,'Ana', 'anacerimonia@gmail.com', '$2b$12$c4b0RqsBeUmviGe49pPB8efZTRkc.Hv/.83eoE15kVhYPptycQdaG',1, 'cerimonialista');
+    VALUES (1,'Vitor', 'vitoradm@gmail.com', '$2b$12$2jv4ngyACIGi820F2FHu3.a962Mpnv1.3VqsXYDzr794cFad3BmOu',1, 'administrador'),
+    (2,'Ana', 'anacerimonia@gmail.com', '$2b$12$5D0iSt84KN.tE0qqJF2iTuOPjxkOYfnxhx5P7rbXKR8LEymgbgg.C',1, 'cerimonialista');
     
     INSERT INTO convidado (idconvidado,nome,cpf,evento_idevento,email)
     VALUES
     (
         1,
-        'Helena Cardoso',
-        42735961052,
+        'Antony da Luz',
+        12486093796,
         1,
-        'maria-luisamachado@example.net'                       
+        'otavio11@example.com'                       
         ),
 (
         2,
-        'Gabrielly Pereira',
-        07543128608,
-        1,
-        'gmendonca@example.net'                       
-        ),
-(
-        3,
-        'Zoe Alves',
-        03764218940,
-        1,
-        'calebdas-neves@example.com'                       
-        ),
-(
-        4,
-        'Melissa Sá',
-        92860417303,
-        1,
-        'novaesdavi-luiz@example.com'                       
-        ),
-(
-        5,
-        'Nathan Sales',
-        78693102478,
-        1,
-        'maria-helena54@example.org'                       
-        ),
-(
-        6,
-        'Lucas Fernandes',
-        46710895211,
+        'Maria Helena Sousa',
+        73520648938,
         1,
         'agathanovais@example.org'                       
         ),
 (
-        7,
-        'Henry Gabriel Caldeira',
-        90672153416,
+        3,
+        'Paulo Martins',
+        93571260406,
         1,
-        'yanpires@example.org'                       
+        'bella02@example.org'                       
+        ),
+(
+        4,
+        'Valentina Melo',
+        70195683277,
+        1,
+        'mendoncadavi-luiz@example.net'                       
+        ),
+(
+        5,
+        'Mateus Araújo',
+        40731982541,
+        1,
+        'tcaldeira@example.org'                       
+        ),
+(
+        6,
+        'Isaac Vasconcelos',
+        96175204867,
+        1,
+        'pedro-miguelpires@example.net'                       
+        ),
+(
+        7,
+        'Dr. Davi Miguel Araújo',
+        63078549283,
+        1,
+        'pastorbreno@example.org'                       
         ),
 (
         8,
-        'Sophie da Cunha',
-        04829163542,
+        'Danilo Gomes',
+        28375041653,
         1,
-        'vargasrodrigo@example.net'                       
+        'alvessophia@example.org'                       
         ),
 (
         9,
-        'Diogo Pacheco',
-        61970823496,
+        'Srta. Allana Freitas',
+        02941835741,
         1,
-        'campossophia@example.net'                       
+        'leandrocastro@example.com'                       
         );
 
     INSERT INTO checkin (idcheckin,convidado_idconvidado,usuario_idusuario,status)
@@ -90,7 +90,7 @@
 (
         3,
         3,
-        1,
+        2,
         'confirmado'                     
         ),
 (
@@ -102,13 +102,13 @@
 (
         5,
         5,
-        1,
+        2,
         'confirmado'                     
         ),
 (
         6,
         6,
-        2,
+        1,
         'confirmado'                     
         ),
 (
@@ -126,7 +126,7 @@
 (
         9,
         9,
-        2,
+        1,
         'confirmado'                     
         );
 

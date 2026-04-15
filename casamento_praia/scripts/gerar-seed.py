@@ -15,9 +15,9 @@ def gerar_sql(tamanho_seed: int):
       sql = "-- seed casamento praia \n\n"
 
       sql += f"""
-  INSERT INTO usuario (idusuario,nome,email,senha,perfil)VALUES
-  (1, 'maria','adminmaria@gmail.com', '{gerar_hash('060606')}','administrador'),
-  (2, 'joao','cerimonialjoao@gmail.com', '{gerar_hash('545454')}','cerimonialista');
+  INSERT INTO usuario (idusuario,nome,email,senha,perfil, cpf)VALUES
+  (1, 'maria','adminmaria@gmail.com', '{gerar_hash('060606')}','administrador',{limpar_cpf(fake.cpf())}),
+  (2, 'joao','cerimonialjoao@gmail.com', '{gerar_hash('545454')}','cerimonialista',{limpar_cpf(fake.cpf())});
   """
      
       sql += f"""

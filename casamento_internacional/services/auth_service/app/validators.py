@@ -3,7 +3,7 @@ import re#compilador que analisa se existe com pattern
 def validate_email(email):
     if not email:
         return False, "email é obrigatório"
-    pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+    pattern = r"^[\w\.-]+@[\w\.-]+.\w+$"
     if not re.match(pattern, email):
         return False, "email inválido"
     return True,""
