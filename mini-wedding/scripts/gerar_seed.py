@@ -12,55 +12,17 @@ def gerar_hash(senha:str):
 
 def gerar_sql(tamanho_seed: int):
     sql = "-- seed mini wedding \n"
-  
-    linha_usuario = []
-
-    for i in range(1,tamanho_seed):
-      id = i
-      nome = fake.name()
-      email = fake.email()
-      senha = gerar_hash(fake.password(length=10))
-      perfil = random.choice(['administrador', 'cerimonialista'])
-      linha_usuario.append(f"""(
-      '{id}',
-      '{nome}',
-      '{email}',
-      '{senha}',
-      '{perfil}'                     
-      )""")
 
     sql += f"""
   INSERT INTO usuario (idusuario,nome,email,senha,perfil)
-  VALUES
-  """+ ",\n".join(linha_usuario)+";\n"
+  VALUES (1, 'mario', 'marioadm@gmail.com','{gerar_hash('54458799')}','administrador'),
+  (2, 'juliana','julianausu@gmail.com','{gerar_hash('36645700')}', 'usuario')
+  """
     
-
-    linha_evento = []
-    date = fake.date()+" "
-    time =fake.time()
-    for i in range(1,tamanho_seed):
-       id = i
-       nome = "mini wedding urbano"
-       date_time = date+time
-       cidade = fake.city()
-       bairro = fake.bairro()
-       rua = fake.street_name()
-       numero = fake.building_number()
-       cep = fake.postcode()
-       linha_evento.append(f"""(
-       '{id}',
-       '{nome}',
-       '{date_time}',
-       '{cidade}',
-       '{bairro}',
-       '{rua}',
-       '{numero}',
-       '{cep}'                    
-       )""")
     sql += f"""
   INSERT INTO evento (idevento,nome,date_time,cidade,bairro,rua,numero,cep)
-  VALUES
-  """+",\n".join(linha_evento)+";\n"
+  VALUES (1, 'mini wedding', '{fake.date_time()}','porto alegre', 'farrapos', 'limario', 455, 06958476)
+  """
     
     linha_convidado = []
     for i in range(tamanho_seed):
@@ -68,16 +30,16 @@ def gerar_sql(tamanho_seed: int):
       nome = fake.name_nonbinary()
       email = fake.email()
       cpf = fake.cpf()
-      restricao_alimentar = random.choice(['Nenhuma','Leite','açucar'])
+      restricao_alimentar = random.choice(['Nenhuma','Lactose','açucar'])
       linha_convidado.append(f"""(
-      '{id}',
+      {id},
       '{nome}',
       '{email}',
       '{cpf}',
       '{restricao_alimentar}'                      
       )""")
     sql += f"""
-  INSERT INTO convidado (idconvidado,nome,email,cpf,restricao_alimentar)
+  INSERT INTO convidado (idconvidado,nome,email,cpf,evento_idevento,restricao_alimentar)
   VALUES
   """+",\n".join(linha_convidado)+";\n"
     
@@ -86,11 +48,11 @@ def gerar_sql(tamanho_seed: int):
       id = i
       status = "confirmado"
       linha_checkin.append(f"""(
-      '{id}',
+      {id},
       '{status}'                     
       )""")
     sql += f"""
-  INSERT INTO checkin (idcheckin,status)
+  INSERT INTO checkin (idcheckin,convidado_idconvidado, usuario_idusuario,status)
   VALUES
   """+",\n".join(linha_checkin)+";\n"
     
@@ -99,12 +61,14 @@ def gerar_sql(tamanho_seed: int):
     for i in range(tamanho_seed):
       id = i
       date_time = fake.date_time()
+      idusaurio = random.choice([1,2])
       linha_log.append(f"""(
-      '{id}',
-      '{date_time}'                
+      {id},
+      '{date_time}',
+      {idusaurio}
       )""")
     sql += f"""
-  INSERT INTO log (idlog,date_time)
+  INSERT INTO log (idlogin_log,date_time,usuario_idusuario)
   VALUES
   """+",\n".join(linha_log)+";\n"
 
