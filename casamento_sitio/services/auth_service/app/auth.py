@@ -61,4 +61,4 @@ def token_required(f):
       return jsonify({"error": "token inválido", "details": str(e)}), 401
 
     return f(*args, **kwargs)
-  return decorate
+  return decorated

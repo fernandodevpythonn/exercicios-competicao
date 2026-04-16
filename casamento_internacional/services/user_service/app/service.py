@@ -41,7 +41,7 @@ def create_user(data):
     conn.commit()
     userid = cursor.lastrowid
   except IntegrityError as e:
-    conn.rollback()
+    conn.rollback()#antes de sair do banco ele commita tudo
     cursor.close()
     conn.close()
     return None, "email ou cpf ja cadastrado"
