@@ -2,182 +2,134 @@
 
 
 INSERT INTO usuario (idusuario,nome,perfil, cpf, email, senha) VALUES
-(1,'Rojer','Administrador', '12345678901', 'admin@casamentotem.com', '$2b$12$XrXLBN7KA.pITRN0.glGo.D/1kY7lsMmu9eMkxbub.iqShKjEroe2'),
-(2,'Maria','Cerimonialista', '10987654321', 'recepcao@wedding.com', '$2b$12$5jRFRl63H2FeyV7fs8v9neaJDnuLbZDRnvy63xOrH7MCUlA8y5TEm'),
-(3,'ana','noiva', '109845656', 'noiva@casamento.com', '$2b$12$4.2tvjY/kdT9cYspKL8vk.B44F7Mo3BnU5Nlxst1OMnvKQbXu8gSq'),
-(4,'vitor','noivo', '109834556', 'noivo@casasadhf.com', '$2b$12$9dMEjmbFxzF6QfdGbcw12eiKCG2bP36tAM/Bnm/EDZoJO/Adw27Xy');
+(1,'Rojer','Administrador', '12345678901', 'admin@casamentotem.com', '$2b$12$2bpa4cz8wYChsONALpunxOgfMy4X43Nl31E7hrHhqCsRBFvsOuEmO'),
+(2,'Maria','Cerimonialista', '10987654321', 'recepcao@wedding.com', '$2b$12$pda38F/X4a.9.CDR05eRI.p9c3pPYMSwW9bhLNfuDjgncbbPGNA7K'),
+(3,'ana','noiva', '109845656', 'noiva@casamento.com', '$2b$12$nAaJaDBjaX.wHKKIsOS/B.9pP0GjZYT43MoKtbjf/4IDETFRzIuAW'),
+(4,'vitor','noivo', '109834556', 'noivo@casasadhf.com', '$2b$12$UbaDJ7WX13QFxvAF9rqTg.p9BWz5WgO8zR9ejSGGWGab5zNV5sDHG');
 
 INSERT INTO evento (idevento, nome, date_time, cidade,bairro,rua,numero)
 VALUES (1,'casamento tematico','04/22/2026 00:00:00','porto alegre','pinheiro','joao de oliveira',220);
 
 INSERT INTO convidado 
-(idconvidado,nome,email,perfil,evento_idevento)
+(idconvidado,nome,email,perfil,evento_idevento,status)
 VALUES
 (
         1,
-        'Matheus Souza',
-        'azevedomatheus@example.com',
-        'administracao',
-        1
+        'Sr. Vitor Vasconcelos',
+        'otavio11@example.com',
+        'amigos',
+        1,
+        'naoconfirmado'
     ),
 (
         2,
-        'Maya Araújo',
-        'luiz-felipe43@example.com',
-        'administracao',
-        1
+        'Ana Liz Farias',
+        'joao-gabrielalmeida@example.com',
+        'amigos',
+        1,
+        'naoconfirmado'
     ),
 (
         3,
-        'Gabriela Pinto',
-        'ana-livia28@example.org',
+        'Matteo Gomes',
+        'camargotheo@example.org',
         'amigos',
-        1
+        1,
+        'naoconfirmado'
     ),
 (
         4,
-        'Arthur Gabriel da Luz',
-        'ksousa@example.com',
+        'Esther Sousa',
+        'gabriellyribeiro@example.com',
         'familiar',
-        1
+        1,
+        'naoconfirmado'
     ),
 (
         5,
-        'Emilly Aragão',
-        'duarteliam@example.net',
-        'administracao',
-        1
+        'Maria Julia Silva',
+        'sampaiothiago@example.net',
+        'familiar',
+        1,
+        'naoconfirmado'
     ),
 (
         6,
-        'Lucas Gabriel Camargo',
-        'sda-luz@example.net',
+        'Kaique Sampaio',
+        'lucas97@example.net',
         'familiar',
-        1
+        1,
+        'naoconfirmado'
     ),
 (
         7,
-        'João Guilherme Guerra',
-        'hadassacampos@example.org',
-        'administracao',
-        1
+        'Natália Costela',
+        'tsiqueira@example.org',
+        'familiar',
+        1,
+        'naoconfirmado'
     ),
 (
         8,
-        'Danilo Martins',
-        'ninaaraujo@example.com',
-        'amigos',
-        1
+        'Sr. Joaquim Moreira',
+        'orios@example.org',
+        'familiar',
+        1,
+        'naoconfirmado'
     ),
 (
         9,
-        'Maria Flor Azevedo',
-        'joao22@example.com',
-        'administracao',
-        1
+        'Vinicius Sales',
+        'wsampaio@example.com',
+        'familiar',
+        1,
+        'naoconfirmado'
     );
-
-INSERT INTO checkin (idcheckin,convidado_idconvidado,status,usuario_idusuario)
-VALUES
-(
-        1,
-        1,
-        'confirmado',                   
-        4
-        ),
-(
-        2,
-        2,
-        'confirmado',                   
-        2
-        ),
-(
-        3,
-        3,
-        'confirmado',                   
-        1
-        ),
-(
-        4,
-        4,
-        'confirmado',                   
-        3
-        ),
-(
-        5,
-        5,
-        'confirmado',                   
-        4
-        ),
-(
-        6,
-        6,
-        'confirmado',                   
-        2
-        ),
-(
-        7,
-        7,
-        'confirmado',                   
-        1
-        ),
-(
-        8,
-        8,
-        'confirmado',                   
-        2
-        ),
-(
-        9,
-        9,
-        'confirmado',                   
-        2
-        );
 
 INSERT INTO log (idlogin_log,date_time,usuario_idusuario)
 VALUES
 (
         1,
-        '1984-07-21 04:16:55',              
+        '2014-07-06 06:37:58',              
         1
         ),
 (
         2,
-        '2011-06-02 08:03:50',              
+        '2012-12-22 03:31:25',              
         1
         ),
 (
         3,
-        '1974-07-04 20:43:40',              
+        '1998-06-07 14:38:30',              
         1
         ),
 (
         4,
-        '1995-05-07 04:31:08',              
+        '2000-03-15 22:15:17',              
         1
         ),
 (
         5,
-        '2026-04-14 18:37:05',              
+        '1973-01-11 12:53:30',              
         1
         ),
 (
         6,
-        '1995-03-26 10:25:14',              
+        '1999-04-16 00:41:40',              
         1
         ),
 (
         7,
-        '1977-05-28 16:17:49',              
+        '1999-09-19 21:16:53',              
         1
         ),
 (
         8,
-        '2016-04-03 15:16:45',              
+        '2016-02-05 04:51:27',              
         1
         ),
 (
         9,
-        '1999-05-15 12:16:35',              
+        '1974-05-11 10:02:49',              
         1
         );

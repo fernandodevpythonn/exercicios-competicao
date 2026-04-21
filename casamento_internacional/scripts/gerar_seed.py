@@ -36,37 +36,22 @@ VALUES (1,'casamento tematico','04/22/2026 00:00:00','porto alegre','pinheiro','
         email = fake.email()
         perfil = random.choice(['familiar','amigos','administracao'])
         idevento = 1
+        status = 'naoconfirmado'
         linha_convidado.append(f"""(
         {id},
         '{nome}',
         '{email}',
         '{perfil}',
-        {idevento}
+        {idevento},
+        '{status}'
     )""")
     sql += """
 INSERT INTO convidado 
-(idconvidado,nome,email,perfil,evento_idevento)
+(idconvidado,nome,email,perfil,evento_idevento,status)
 VALUES
 """ + ",\n".join(linha_convidado) + ";\n"
     
-    linha_checkin = []
-    for i in range(1,qtd_convidados):
-        id = i
-        id_convidado = i
-        id_usuario = random.choice([1,2,3,4])
-        status = 'confirmado'
-        linha_checkin.append(f"""(
-        {id},
-        {id_convidado},
-        '{status}',                   
-        {id_usuario}
-        )""")
-    sql += """
-INSERT INTO checkin (idcheckin,convidado_idconvidado,status,usuario_idusuario)
-VALUES
-"""+",\n".join(linha_checkin)+";\n"
-
-
+    
     linha_log = []
     for i in range(1,qtd_convidados):
         idlog = i
