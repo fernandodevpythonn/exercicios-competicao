@@ -56,7 +56,8 @@ def token_required(f):
     
     try:
       token = token.split(" ")[1]
-      jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+      data = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+      request.user = data
     except Exception as e:
       return jsonify({"error": "token inválido", "details": str(e)}), 401
     

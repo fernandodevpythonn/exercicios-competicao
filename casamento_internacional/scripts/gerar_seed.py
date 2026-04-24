@@ -19,7 +19,7 @@ def gerar_sql(qtd_convidados: int) -> str:
     sql += f"""
 INSERT INTO usuario (idusuario,nome,perfil, cpf, email, senha) VALUES
 (1,'Rojer','Administrador', '12345678901', 'admin@casamentotem.com', '{gerar_hash('345663554')}'),
-(2,'Maria','Cerimonialista', '10987654321', 'recepcao@wedding.com', '{gerar_hash('33939')}'),
+(2,'Maria','Cerimonialista', '10987654321', 'recepcao@wedding.com', '{gerar_hash('345345435')}'),
 (3,'ana','noiva', '109845656', 'noiva@casamento.com', '{gerar_hash('333453')}'),
 (4,'vitor','noivo', '109834556', 'noivo@casasadhf.com', '{gerar_hash('234234')}');
 """

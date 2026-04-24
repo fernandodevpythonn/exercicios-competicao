@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { API } from "../services/api";
+import { useEffect, useState } from "react"
+import { API } from "../services/api"
 import "./Guests.css"
+
 export default function Guests(){
     const [guests,setGuests] = useState([])
     const [loading, setLoading] = useState(true)
@@ -17,6 +18,8 @@ export default function Guests(){
                         Authorization: `Bearer ${token}`,
                     },
                 })
+
+                setGuests(res.data)
             } catch (err){
                 console.log("erro:", err.response?.data)
                 window.location.replace("/")
@@ -42,9 +45,16 @@ export default function Guests(){
             <div className="guests-list">
                 {guests.map((g)=>(
                     <div key={g.id_convidado} className="guest-card">
-                      <div></div>
+                      <div className="guest-name">{g.nome}</div>
+                      <p className="guest-text">email: {g.email}</p>
+                      <p className="guest-text">cpf: {g.cpf}</p>
                     </div>
                 ))}
+            </div>
+            <div className="logout-container">
+              <button className="logout-button" onClick={logout}>
+                Sair
+              </button>
             </div>
         </div>
     )

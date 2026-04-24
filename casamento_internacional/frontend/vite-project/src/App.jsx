@@ -28,10 +28,10 @@ function App(){
   return (
     <div>
       {!token ? (
-        <Login onLogin={handleLogin}/>
+        <Login onLogin={handleLogin} />
       ) : (
         <>
-          <Guests/>
+          <Guests />
         </>
       )}
 

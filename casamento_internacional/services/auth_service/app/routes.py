@@ -5,4 +5,4 @@ main = Blueprint("main", __name__)
 
 @main.route("/login", methods = ["POST"])
 def login():
-    return login_user(request.json)
+    return login_user(request.get_json())
