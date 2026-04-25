@@ -44,7 +44,7 @@ export default function Guests(){
             )}
             <div className="guests-list">
                 {guests.map((g)=>(
-                    <div key={g.id_convidado} className="guest-card">
+                    <div key={g.idconvidado} className="guest-card">
                       <div className="guest-name">{g.nome}</div>
                       <p className="guest-text">email: {g.email}</p>
                       <p className="guest-text">cpf: {g.cpf}</p>

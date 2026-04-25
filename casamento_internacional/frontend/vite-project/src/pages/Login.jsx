@@ -3,20 +3,20 @@ import { API } from "../services/api"
 
 import "./Login.css"
 
-export default function Login({onlogin}){
+export default function Login({onLogin}){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    async function handleLogin(e){
+    async function handleLogin(e) {
       e.preventDefault()
-      try{
-        const res = await API.auth.post("/login",{
-            email,
-            senha:password,
+      try {
+        const res = await API.auth.post("/login", {
+          email,
+          senha: password,
         })
-        const token = res.data.token || res.data.acess_token
+        const token = res.data.token || res.data.access_token
         localStorage.setItem("token", token)
-        onlogin(token)
+        onLogin(token)
       } catch (err) {
         console.log(err.response?.data)
         alert("erro no login")

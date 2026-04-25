@@ -15,7 +15,7 @@ const createAPI = (baseURL) => {
 }
 
 export const API = {
-    auth: createAPI("http://localhost:5001"),
-    guest: createAPI("http://localhost:5005"),
-    checkin: createAPI("http://localhost:5003")
+  auth: createAPI("http://localhost:5001"),
+  guest: createAPI("http://localhost:5005"),
+  user: createAPI("http://localhost:5003"),
 }
